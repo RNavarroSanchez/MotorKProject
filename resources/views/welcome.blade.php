@@ -5,22 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="{{ asset('js/motork.js') }}" defer></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
+        
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <title>MotorK Project</title>
     </head>
-    <body>
-        <section class="">
+    <body class="px-12 pt-12">
+        <h1 class="container text-center text-gray-800 text-2xl font-bold pb-12">Search page</h1>
+        <section class="flex">
             <!--start sidebar filters-->
             <section class="lg:w-1/4">
-
+                <div class="bg-red-800 px- w-full h-full">
+                    @include('filter')
+                </div>
             </section>
             <!--end sidebar filters-->
 
             <!--start expositor vehicles-->
-            <section class="lg:w-3/4 flex flex-wrap">
+            <section class="w-3/4 flex flex-wrap">
                 @include ('vehicles')
             </section>
             <!--end expositor vehicles--> 
