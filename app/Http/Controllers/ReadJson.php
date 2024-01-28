@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Vehicle;
 
@@ -33,20 +33,5 @@ class ReadJson extends Controller
        }
        
    }
-   public function search(Request $request)
-    {
-        $searchTerm = $request->input('searchTerm');
-
-        // Leer el contenido del archivo JSON
-        $json = File::get(storage_path('app/json/vehicles.json'));
-        $cars = json_decode($json);
-
-        // Filtrar los coches según el término de búsqueda
-        $filteredCars = collect($cars)->filter(function ($car) use ($searchTerm) {
-            return stripos($car->make, $searchTerm) !== false || stripos($car->model, $searchTerm) !== false;
-        });
-
-        return response()->json($filteredCars);
-    }
-
+  
 }
