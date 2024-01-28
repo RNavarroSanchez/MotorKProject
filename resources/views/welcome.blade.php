@@ -23,7 +23,7 @@
             <!--end sidebar filters-->
 
             <!--start expositor vehicles-->
-            <section class="md:w-3/4 w-full flex flex-wrap">
+            <section class="md:w-3/4 sm:w-full flex flex-wrap ">
                 @include ('vehicles')
             </section>
             <!--end expositor vehicles--> 

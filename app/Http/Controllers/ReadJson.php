@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Vehicle;
 
@@ -17,8 +16,7 @@ class ReadJson extends Controller
 
        // Verificar si hay datos
        if ($vehicles)
-        {     
-            
+        {       
             $vehiclesjson = [];
             foreach ($vehicles as $vehiclesData) {
                 
@@ -30,8 +28,7 @@ class ReadJson extends Controller
        else 
        {
            echo "No se encontraron datos en el JSON.";
-       }
-       
+       }  
    }
-  
+
 }

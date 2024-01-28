@@ -63,3 +63,8 @@
                 </div>
         </div>
     </div>
+    @endforeach
+    
+    @else
+        <p>no hay datos</p>
+@endif  
