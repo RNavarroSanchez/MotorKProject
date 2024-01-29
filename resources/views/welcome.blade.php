@@ -12,10 +12,10 @@
         <title>MotorK Project</title>
     </head>
     <body class="px-12 pt-12">
-        <h1 class="container text-center text-gray-800 text-2xl font-bold pb-12 ">Search page</h1>
-        <section class="flex flex-col md:flex-row space-x-3 ">
+        <h1 class="container text-center text-gray-800 text-2xl font-bold pb-12 mx-auto max-w-screen-lg ">Search page</h1>
+        <section class="flex flex-col md:flex-row mx-auto max-w-screen-lg">
             <!--start sidebar filters-->
-            <section class="md:w-1/4">
+            <section class="md:w-1/4 mb-4 mr-3">
                 <div class="w-full p-6 bg-white rounded-md border border-gray-300 flex flex-col justify-start items-start space-y-4">
                     @include('filter')
                 </div>
@@ -23,7 +23,7 @@
             <!--end sidebar filters-->
 
             <!--start expositor vehicles-->
-            <section class="md:w-3/4 sm:w-full flex flex-wrap ">
+            <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 @include ('vehicles')
             </section>
             <!--end expositor vehicles--> 
