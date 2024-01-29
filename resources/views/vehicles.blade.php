@@ -3,7 +3,7 @@
 @if ($vehicles)
     @foreach ($vehicles as $vehicle)
    <!-- <div class="flex w-full sm:w-full md:w-1/3 lg:w-1/3 xl:w-1/3 mb-4">-->
-        <div class="shadow-md border rounded-md border-gray-400">
+        <div class="shadow-md border rounded-md border-gray-400 {{ $vehicle->status !== 'FREE' ? 'opacity-30' : '' }}">
                 <div class="relative">
                     <img src="{{$vehicle->image}}" class="w-full h-40 object-cover object-center">
                     <div x-data="{ km0: {{ $vehicle->isKM0 ? 'true' : 'false' }} }">
