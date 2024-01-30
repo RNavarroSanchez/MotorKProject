@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Vehicle
+class Vehicle extends Model
 {
     public $id;
     public $make;

@@ -1,4 +1,7 @@
+
+
 <!-- Filtros -->
+<a href="/">Borrar filtros</a>
     <div class="flex flex-row">
         <img src="/storage/svg/filter.svg" alt="Filtro SVG" class="">
         <div class="text-base font-semibold text-gray-700">Filters</div>
@@ -8,8 +11,10 @@
     <!-- Búsqueda -->
     <div class="flex flex-col space-y-4 w-full">
         <div class=" font-semibold text-gray-700 w-full">Search</div>
-            <input type="text" class="border border-gray-300 px-3 py-2 rounded" placeholder="Search here">
-    </div>
+            <form action="/search" method="get" x-data="{ searchTerm: '' }">
+                <input x-model="searchTerm" @input="search" type="text" name="searchTerm" id="searchTerm" class="border border-gray-300 px-3 py-2 rounded w-full" placeholder="Search here" required>
+            </form> 
+        </div>
     <div class="w-full h-1 bg-gray-200"></div>
 
     <!-- Unidad de medida -->

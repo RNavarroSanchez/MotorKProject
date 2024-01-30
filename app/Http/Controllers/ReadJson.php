@@ -8,6 +8,7 @@ use App\Models\Vehicle;
 use Illuminate\Support\Facades\Storage;
 
 
+
 class ReadJson extends Controller
 {
     public function showDataFromJson()
@@ -27,4 +28,25 @@ class ReadJson extends Controller
             return response()->json(['message' => 'No se encontraron datos en el JSON.'], 404);
         }
     }
+
+     public function search(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        $filePath = 'json/vehicles.json'; 
+        $contentJson = Storage::get($filePath);
+        $vehicles = json_decode($contentJson, true);
+
+        $filteredVehicles = collect($vehicles)->filter(function ($vehicle) use ($searchTerm) {
+            return stripos($vehicle["make"], $searchTerm) !== false ||
+                   stripos($vehicle["model"], $searchTerm) !== false;
+                   
+        });
+        $filteredVehicles = $filteredVehicles->map(function ($vehicle) {
+            return new Vehicle($vehicle);
+        });
+
+        return view('welcome', ['vehicles' => $filteredVehicles]);
+    }
+
 }

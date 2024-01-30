@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ReadJson;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ReadJson::class, 'showDataFromJson'] );
+Route::get('/search', [ReadJson::class, 'search']);
 
