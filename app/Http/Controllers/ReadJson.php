@@ -24,7 +24,7 @@ class ReadJson extends Controller
 
             return view('welcome', ['vehicles' => $vehicles]);
         } else {
-            // Puedes lanzar una excepción o devolver una respuesta HTTP
+            
             return response()->json(['message' => 'No se encontraron datos en el JSON.'], 404);
         }
     }
@@ -45,7 +45,8 @@ class ReadJson extends Controller
         $filteredVehicles = $filteredVehicles->map(function ($vehicle) {
             return new Vehicle($vehicle);
         });
-
+        
+    
         return view('welcome', ['vehicles' => $filteredVehicles]);
     }
 

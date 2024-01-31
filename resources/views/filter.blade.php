@@ -1,7 +1,6 @@
-
-
+<!-- resources/views/filter.blade.php -->
 <!-- Filtros -->
-<a href="/">Borrar filtros</a>
+
     <div class="flex flex-row">
         <img src="/storage/svg/filter.svg" alt="Filtro SVG" class="">
         <div class="text-base font-semibold text-gray-700">Filters</div>
@@ -31,3 +30,6 @@
                 </button>
             </div>
     </div>
+    <a href="/">Borrar filtros</a>
+
+ 
